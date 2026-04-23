@@ -1,6 +1,7 @@
 import click
 from subnet_calc.core import get_subnet_info
 from subnet_calc.formatter import display_subnet_info
+from subnet_calc.visualizer import display_subnet_tree
 
 
 @click.command()
@@ -9,3 +10,6 @@ from subnet_calc.formatter import display_subnet_info
 def cli(network, split):
     result = get_subnet_info(network)
     display_subnet_info(result)
+    
+    if split is not None:
+        display_subnet_tree(network, int(split))
