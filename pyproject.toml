@@ -1,0 +1,18 @@
+[project]
+name = "subnet-calculator"
+version = "0.0.1"
+description = "Helps calculate your subnet mask, subnets your ip address and classify your network giving full detail for everything you feed."
+requires-python=">=3.14.0"
+dependencies = ["click", "rich"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+ipcalc = "main:cli"
+subnetcalc = "main:cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["subnet_calc"]
+
